@@ -110,13 +110,15 @@
         "bot": "9d156d3c3c4f5a59",
         "haserroroutput": true,
         "outputs": 2,
-        "x": 620,
-        "y": 340,
+        "x": 600,
+        "y": 300,
         "wires": [
             [
                 "ea8cdea0c35a7ff3"
             ],
-            []
+            [
+                "2177bd87775a9d6a"
+            ]
         ]
     },
     {
@@ -227,7 +229,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 840,
