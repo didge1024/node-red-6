@@ -109,8 +109,8 @@
         "bot": "9d156d3c3c4f5a59",
         "haserroroutput": true,
         "outputs": 2,
-        "x": 350,
-        "y": 420,
+        "x": 550,
+        "y": 300,
         "wires": [
             [],
             []
