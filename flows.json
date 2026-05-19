@@ -121,15 +121,15 @@
         "type": "function",
         "z": "daea914a54c9431c",
         "name": "function 1",
-        "func": "\nreturn msg;",
+        "func": "// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = date.toString();\n// Return the message so it can be sent on\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 420,
+        "x": 800,
+        "y": 340,
         "wires": [
             []
         ]
