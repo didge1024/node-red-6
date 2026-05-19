@@ -115,5 +115,23 @@
             [],
             []
         ]
+    },
+    {
+        "id": "2177bd87775a9d6a",
+        "type": "function",
+        "z": "daea914a54c9431c",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            []
+        ]
     }
 ]
