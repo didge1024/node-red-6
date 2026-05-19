@@ -225,7 +225,7 @@
         "id": "ea8cdea0c35a7ff3",
         "type": "debug",
         "z": "daea914a54c9431c",
-        "name": "debug 3",
+        "name": "dbg humidity out",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -234,8 +234,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 260,
+        "x": 780,
+        "y": 240,
         "wires": []
     },
     {
