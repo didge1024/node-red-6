@@ -331,11 +331,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 680,
+        "x": 580,
+        "y": 700,
         "wires": [
             [
-                "bda3023aa778231a"
+                "bda3023aa778231a",
+                "790eadff41626271"
             ]
         ]
     },
@@ -347,8 +348,8 @@
         "bot": "9d156d3c3c4f5a59",
         "haserroroutput": false,
         "outputs": 1,
-        "x": 780,
-        "y": 680,
+        "x": 790,
+        "y": 700,
         "wires": [
             []
         ]
@@ -393,5 +394,21 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "790eadff41626271",
+        "type": "debug",
+        "z": "daea914a54c9431c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 760,
+        "wires": []
     }
 ]
