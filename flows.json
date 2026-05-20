@@ -135,23 +135,6 @@
         ]
     },
     {
-        "id": "8e05b25993e15b9d",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 1",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "6974f16e76fcf842",
         "type": "inject",
         "z": "daea914a54c9431c",
@@ -207,22 +190,6 @@
         "wires": []
     },
     {
-        "id": "29f50ea68fe06411",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "57ac8017da4a1d97",
         "type": "telegram sender",
         "z": "daea914a54c9431c",
@@ -254,22 +221,6 @@
             [],
             []
         ]
-    },
-    {
-        "id": "12ea469c843e621c",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 180,
-        "y": 700,
-        "wires": []
     },
     {
         "id": "15b8c93d1b9fda80",
