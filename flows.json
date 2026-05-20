@@ -99,7 +99,7 @@
             [
                 "28f0cc41a32b6d3f",
                 "2177bd87775a9d6a",
-                "0e0bf5044985dbee"
+                "2abd20fe3b0a48fa"
             ]
         ]
     },
@@ -230,31 +230,6 @@
         ]
     },
     {
-        "id": "0e0bf5044985dbee",
-        "type": "csv",
-        "z": "daea914a54c9431c",
-        "name": "Converter",
-        "spec": "rfc",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "none",
-        "multi": "one",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": true,
-        "x": 500,
-        "y": 300,
-        "wires": [
-            [
-                "2abd20fe3b0a48fa",
-                "29f50ea68fe06411"
-            ]
-        ]
-    },
-    {
         "id": "29f50ea68fe06411",
         "type": "debug",
         "z": "daea914a54c9431c",
@@ -282,8 +257,8 @@
         "inputs": 0,
         "handleallupdates": false,
         "handleprocessupdates": false,
-        "x": 620,
-        "y": 660,
+        "x": 120,
+        "y": 620,
         "wires": [
             [
                 "12ea469c843e621c"
@@ -303,8 +278,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 660,
+        "x": 340,
+        "y": 620,
         "wires": []
     },
     {
@@ -317,6 +292,33 @@
         "outputs": 1,
         "x": 220,
         "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15b8c93d1b9fda80",
+        "type": "inject",
+        "z": "daea914a54c9431c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 700,
         "wires": [
             []
         ]
