@@ -325,7 +325,7 @@
         "type": "function",
         "z": "daea914a54c9431c",
         "name": "function 2",
-        "func": "msg.payload = {\n    chatId: 8995332802,  \n    type: \"message\",\n    content: \"Hello from Node-RED!\"\n};\nreturn msg;",
+        "func": "msg.payload = {\n    chatId: 8995332802,  \n    type: \"message\",\n    content: \"Hello!\"\n};\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
