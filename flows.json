@@ -310,5 +310,19 @@
         "x": 750,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "57ac8017da4a1d97",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "",
+        "bot": "",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 100,
+        "wires": [
+            []
+        ]
     }
 ]
