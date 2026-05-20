@@ -96,22 +96,9 @@
         "x": 270,
         "y": 440,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2abd20fe3b0a48fa",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "Humidity Sender",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": true,
-        "outputs": 2,
-        "x": 760,
-        "y": 420,
-        "wires": [
-            [],
-            []
+            [
+                "30e8aa5a92e74fc5"
+            ]
         ]
     },
     {
@@ -131,6 +118,23 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "8e05b25993e15b9d",
+        "type": "debug",
+        "z": "daea914a54c9431c",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "6974f16e76fcf842",
@@ -156,7 +160,9 @@
         "x": 600,
         "y": 520,
         "wires": [
-            []
+            [
+                "2177bd87775a9d6a"
+            ]
         ]
     },
     {
@@ -176,6 +182,23 @@
         "wires": []
     },
     {
+        "id": "ea8cdea0c35a7ff3",
+        "type": "debug",
+        "z": "daea914a54c9431c",
+        "name": "dbg humidity out",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 160,
+        "wires": []
+    },
+    {
         "id": "a88f445106480e65",
         "type": "comment",
         "z": "daea914a54c9431c",
@@ -186,18 +209,37 @@
         "wires": []
     },
     {
-        "id": "57ac8017da4a1d97",
+        "id": "2abd20fe3b0a48fa",
         "type": "telegram sender",
         "z": "daea914a54c9431c",
-        "name": "G6Test1",
+        "name": "Humidity Sender",
         "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 780,
-        "y": 300,
+        "haserroroutput": true,
+        "outputs": 2,
+        "x": 760,
+        "y": 420,
         "wires": [
+            [
+                "93e8c116ac688f2b"
+            ],
             []
         ]
+    },
+    {
+        "id": "29f50ea68fe06411",
+        "type": "debug",
+        "z": "daea914a54c9431c",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "333bb022d0d62bdc",
@@ -219,60 +261,10 @@
         ]
     },
     {
-        "id": "15b8c93d1b9fda80",
-        "type": "inject",
-        "z": "daea914a54c9431c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 520,
-        "wires": [
-            [
-                "fb796ab6dd27c66a"
-            ]
-        ]
-    },
-    {
-        "id": "fb796ab6dd27c66a",
-        "type": "function",
-        "z": "daea914a54c9431c",
-        "name": "function 2",
-        "func": "msg.payload = {\n    chatId: 8995332802,  \n    type: \"message\",\n    content: \"Hello!\"\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 500,
-        "wires": [
-            [
-                "790eadff41626271",
-                "2abd20fe3b0a48fa"
-            ]
-        ]
-    },
-    {
-        "id": "790eadff41626271",
+        "id": "12ea469c843e621c",
         "type": "debug",
         "z": "daea914a54c9431c",
-        "name": "debug 5",
+        "name": "debug 4",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -280,9 +272,68 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 640,
+        "x": 180,
+        "y": 700,
         "wires": []
+    },
+    {
+        "id": "57ac8017da4a1d97",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "G6Test1",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "ea8cdea0c35a7ff3"
+            ]
+        ]
+    },
+    {
+        "id": "93e8c116ac688f2b",
+        "type": "function",
+        "z": "daea914a54c9431c",
+        "name": "function 2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30e8aa5a92e74fc5",
+        "type": "trigger",
+        "z": "daea914a54c9431c",
+        "name": "",
+        "op1": "1",
+        "op2": "",
+        "op1type": "str",
+        "op2type": "pay",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "2abd20fe3b0a48fa"
+            ]
+        ]
     },
     {
         "id": "0a5032957c884cfb",
