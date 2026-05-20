@@ -97,9 +97,9 @@
         "y": 300,
         "wires": [
             [
-                "2abd20fe3b0a48fa",
                 "28f0cc41a32b6d3f",
-                "2177bd87775a9d6a"
+                "2177bd87775a9d6a",
+                "d0f1a8f7248c5dd1"
             ]
         ]
     },
@@ -111,7 +111,7 @@
         "bot": "9d156d3c3c4f5a59",
         "haserroroutput": true,
         "outputs": 2,
-        "x": 600,
+        "x": 720,
         "y": 300,
         "wires": [
             [
@@ -233,8 +233,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 220,
+        "x": 900,
+        "y": 160,
         "wires": []
     },
     {
@@ -277,10 +277,12 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 760,
-        "y": 360,
+        "x": 460,
+        "y": 300,
         "wires": [
-            []
+            [
+                "2abd20fe3b0a48fa"
+            ]
         ]
     }
 ]
