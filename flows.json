@@ -104,23 +104,6 @@
         ]
     },
     {
-        "id": "2abd20fe3b0a48fa",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "Humidity Sender",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": true,
-        "outputs": 2,
-        "x": 720,
-        "y": 300,
-        "wires": [
-            [
-                "ea8cdea0c35a7ff3"
-            ],
-            []
-        ]
-    },
-    {
         "id": "2177bd87775a9d6a",
         "type": "function",
         "z": "daea914a54c9431c",
@@ -281,7 +264,7 @@
         "y": 300,
         "wires": [
             [
-                "2abd20fe3b0a48fa"
+                "0e0bf5044985dbee"
             ]
         ]
     },
@@ -294,5 +277,46 @@
         "x": 540,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "2abd20fe3b0a48fa",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "Humidity Sender",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": true,
+        "outputs": 2,
+        "x": 800,
+        "y": 300,
+        "wires": [
+            [
+                "ea8cdea0c35a7ff3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0e0bf5044985dbee",
+        "type": "csv",
+        "z": "daea914a54c9431c",
+        "name": "Converter",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 640,
+        "y": 300,
+        "wires": [
+            [
+                "2abd20fe3b0a48fa"
+            ]
+        ]
     }
 ]
