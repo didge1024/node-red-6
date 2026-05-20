@@ -102,23 +102,6 @@
         ]
     },
     {
-        "id": "2abd20fe3b0a48fa",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "Humidity Sender",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": true,
-        "outputs": 2,
-        "x": 580,
-        "y": 440,
-        "wires": [
-            [
-                "93e8c116ac688f2b"
-            ],
-            []
-        ]
-    },
-    {
         "id": "2177bd87775a9d6a",
         "type": "function",
         "z": "daea914a54c9431c",
@@ -226,6 +209,23 @@
         "wires": []
     },
     {
+        "id": "2abd20fe3b0a48fa",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "Humidity Sender",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": true,
+        "outputs": 2,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "93e8c116ac688f2b"
+            ],
+            []
+        ]
+    },
+    {
         "id": "29f50ea68fe06411",
         "type": "debug",
         "z": "daea914a54c9431c",
@@ -240,20 +240,6 @@
         "x": 1140,
         "y": 520,
         "wires": []
-    },
-    {
-        "id": "57ac8017da4a1d97",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "G6Test1",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 640,
-        "y": 220,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "333bb022d0d62bdc",
@@ -291,6 +277,20 @@
         "wires": []
     },
     {
+        "id": "57ac8017da4a1d97",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "G6Test1",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "15b8c93d1b9fda80",
         "type": "inject",
         "z": "daea914a54c9431c",
@@ -313,6 +313,42 @@
         "payloadType": "date",
         "x": 400,
         "y": 700,
+        "wires": [
+            [
+                "fb796ab6dd27c66a"
+            ]
+        ]
+    },
+    {
+        "id": "fb796ab6dd27c66a",
+        "type": "function",
+        "z": "daea914a54c9431c",
+        "name": "function 2",
+        "func": "msg.payload = {\n    chatId: 8995332802,  \n    type: \"message\",\n    content: \"Hello from Node-RED!\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 680,
+        "wires": [
+            [
+                "bda3023aa778231a"
+            ]
+        ]
+    },
+    {
+        "id": "bda3023aa778231a",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 680,
         "wires": [
             []
         ]
