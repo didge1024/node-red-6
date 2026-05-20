@@ -141,24 +141,6 @@
         "wires": []
     },
     {
-        "id": "1c337a1ab003273f",
-        "type": "function",
-        "z": "daea914a54c9431c",
-        "name": "function 2",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 200,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "6974f16e76fcf842",
         "type": "inject",
         "z": "daea914a54c9431c",
@@ -219,29 +201,6 @@
         "x": 900,
         "y": 160,
         "wires": []
-    },
-    {
-        "id": "c6bc7aec2acae9eb",
-        "type": "trigger",
-        "z": "daea914a54c9431c",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "val",
-        "op2type": "val",
-        "duration": "250",
-        "extend": "false",
-        "overrideDelay": "false",
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 400,
-        "y": 560,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "a88f445106480e65",
@@ -323,8 +282,8 @@
         "inputs": 0,
         "handleallupdates": false,
         "handleprocessupdates": false,
-        "x": 600,
-        "y": 680,
+        "x": 620,
+        "y": 660,
         "wires": [
             [
                 "12ea469c843e621c"
