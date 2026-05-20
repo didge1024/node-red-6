@@ -285,8 +285,8 @@
         "skip": "0",
         "strings": true,
         "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 520,
+        "include_null_values": true,
+        "x": 500,
         "y": 300,
         "wires": [
             [
