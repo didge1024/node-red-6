@@ -306,12 +306,12 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 400,
+        "x": 410,
         "y": 700,
         "wires": [
             [
