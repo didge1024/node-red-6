@@ -97,8 +97,26 @@
         "y": 440,
         "wires": [
             [
-                "2abd20fe3b0a48fa"
+                "2abd20fe3b0a48fa",
+                "30e8aa5a92e74fc5"
             ]
+        ]
+    },
+    {
+        "id": "2abd20fe3b0a48fa",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "Humidity Sender",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": true,
+        "outputs": 2,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "93e8c116ac688f2b"
+            ],
+            []
         ]
     },
     {
@@ -209,23 +227,6 @@
         "wires": []
     },
     {
-        "id": "2abd20fe3b0a48fa",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "Humidity Sender",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": true,
-        "outputs": 2,
-        "x": 580,
-        "y": 440,
-        "wires": [
-            [
-                "93e8c116ac688f2b"
-            ],
-            []
-        ]
-    },
-    {
         "id": "29f50ea68fe06411",
         "type": "debug",
         "z": "daea914a54c9431c",
@@ -240,6 +241,20 @@
         "x": 1140,
         "y": 520,
         "wires": []
+    },
+    {
+        "id": "57ac8017da4a1d97",
+        "type": "telegram sender",
+        "z": "daea914a54c9431c",
+        "name": "G6Test1",
+        "bot": "9d156d3c3c4f5a59",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 300,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "333bb022d0d62bdc",
@@ -277,20 +292,6 @@
         "wires": []
     },
     {
-        "id": "57ac8017da4a1d97",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "G6Test1",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 640,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "15b8c93d1b9fda80",
         "type": "inject",
         "z": "daea914a54c9431c",
@@ -316,6 +317,49 @@
         "wires": [
             [
                 "fb796ab6dd27c66a"
+            ]
+        ]
+    },
+    {
+        "id": "93e8c116ac688f2b",
+        "type": "function",
+        "z": "daea914a54c9431c",
+        "name": "function 2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30e8aa5a92e74fc5",
+        "type": "trigger",
+        "z": "daea914a54c9431c",
+        "name": "",
+        "op1": "1",
+        "op2": "",
+        "op1type": "str",
+        "op2type": "pay",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "57ac8017da4a1d97"
             ]
         ]
     },
@@ -350,47 +394,6 @@
         "outputs": 1,
         "x": 790,
         "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "93e8c116ac688f2b",
-        "type": "function",
-        "z": "daea914a54c9431c",
-        "name": "function 2",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "30e8aa5a92e74fc5",
-        "type": "trigger",
-        "z": "daea914a54c9431c",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "val",
-        "op2type": "val",
-        "duration": "250",
-        "extend": "false",
-        "overrideDelay": "false",
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 460,
-        "y": 280,
         "wires": [
             []
         ]
