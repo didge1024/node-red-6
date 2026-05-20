@@ -109,12 +109,10 @@
         "bot": "9d156d3c3c4f5a59",
         "haserroroutput": true,
         "outputs": 2,
-        "x": 800,
-        "y": 300,
+        "x": 580,
+        "y": 440,
         "wires": [
-            [
-                "ea8cdea0c35a7ff3"
-            ],
+            [],
             []
         ]
     },
