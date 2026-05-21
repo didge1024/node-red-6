@@ -1,349 +1,349 @@
 [
-    {
-        "id": "daea914a54c9431c",
-        "type": "tab",
-        "label": "6: Flow1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "43d1740e38cc6310",
-        "type": "tls-config",
-        "name": "mqtt.lora.eagelcovewc.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "mqtt_client.pem",
-        "keyname": "mqtt_client.key",
-        "caname": "ca.pem",
-        "servername": "mqtt.lora.eagelcovewc.com",
-        "verifyservercert": true,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "9d156d3c3c4f5a59",
-        "type": "telegram bot",
-        "botname": "SJI IOT BOT",
-        "usernames": "",
-        "chatids": "",
-        "baseapiurl": "",
-        "testenvironment": false,
-        "updatemode": "polling",
-        "pollinterval": 300,
-        "usesocks": false,
-        "sockshost": "",
-        "socksprotocol": "socks5",
-        "socksport": 6667,
-        "socksusername": "anonymous",
-        "sockspassword": "",
-        "bothost": "",
-        "botpath": "",
-        "localbothost": "0.0.0.0",
-        "localbotport": 8443,
-        "publicbotport": 8443,
-        "privatekey": "",
-        "certificate": "",
-        "useselfsignedcertificate": false,
-        "sslterminated": false,
-        "verboselogging": false
-    },
-    {
-        "id": "b79a80b523e80429",
-        "type": "mqtt-broker",
-        "name": "mqtt.lora.ecwc.com",
-        "broker": "mqtt.lora.eaglecovewc.com",
-        "port": "8883",
-        "tls": "43d1740e38cc6310",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": true,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "3acc32140ce24c65",
-        "type": "mqtt in",
-        "z": "daea914a54c9431c",
-        "name": "ECWC Infrastructure Meter",
-        "topic": "application/4240e563-c576-499b-b6e9-89b95e3c4236/device/+/event/up",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "b79a80b523e80429",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 270,
-        "y": 440,
-        "wires": [
-            [
-                "93e8c116ac688f2b",
-                "28f0cc41a32b6d3f"
-            ]
-        ]
-    },
-    {
-        "id": "2abd20fe3b0a48fa",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "Humidity Sender",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": true,
-        "outputs": 2,
-        "x": 780,
-        "y": 420,
-        "wires": [
-            [
-                "8e05b25993e15b9d"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "2177bd87775a9d6a",
-        "type": "function",
-        "z": "daea914a54c9431c",
-        "name": "function 1",
-        "func": "// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = date.toString();\n// Return the message so it can be sent on\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6974f16e76fcf842",
-        "type": "inject",
-        "z": "daea914a54c9431c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 600,
-        "y": 520,
-        "wires": [
-            [
-                "2177bd87775a9d6a"
-            ]
-        ]
-    },
-    {
-        "id": "28f0cc41a32b6d3f",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 2",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "a88f445106480e65",
-        "type": "comment",
-        "z": "daea914a54c9431c",
-        "name": "Group 6 LoRaWAN Info",
-        "info": "## Group 6 - LoRaWAN Device Info\n\n**Application ID:** `8f77ae9d-fcd9-4d0a-ab94-c1b0f2d4c4cd`\n**MQTT Topic:** `application/8f77ae9d-fcd9-4d0a-ab94-c1b0f2d4c4cd/device/+/event/up`\n**Telegram Chat ID:** `-5151436762`\n**All-groups Chat ID:** `-5144508977`\n\n### Relay 6 (4 Channel Relay)\n- **DEV EUI:** `48E663FFFE300A72`\n- **APP EUI:** `48FF000000000A72`\n- **APP KEY:** `21653DA6077409B782859D8F2CB604F0`\n\n### TempHum6 (Temp & Humid Sensor)\n- **DEV EUI:** `48E663FFFE3010EF`\n- **APP EUI:** `48FF0000000010EF`\n- **APP KEY:** `A95B5FAF6CA0B8D8C982131ECF75BB61`\n\n---\n**Telegram for Windows:** [Download](https://telegram.org/dl/desktop/win)\n\n**AgroSense Sensor Manual:** [PDF](https://github.com/Makerfabs/Agrosense-Decoder/blob/main/Agrosense_Air_Temperature_Humidity_Sensor/AgroSense_Air%20Temperature%20and%20Humidity%20Sensor%20LoRaWAN%C2%AE%20Manual%20V1.2.pdf)\n\n**Telegram Group Link:** https://t.me/+38ZreTySeck5N2Nh\n",
-        "x": 540,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "57ac8017da4a1d97",
-        "type": "telegram sender",
-        "z": "daea914a54c9431c",
-        "name": "G6Test1",
-        "bot": "9d156d3c3c4f5a59",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 800,
-        "y": 280,
-        "wires": [
-            [
-                "ea8cdea0c35a7ff3"
-            ]
-        ]
-    },
-    {
-        "id": "333bb022d0d62bdc",
-        "type": "telegram receiver",
-        "z": "daea914a54c9431c",
-        "name": "Big funny",
-        "bot": "9d156d3c3c4f5a59",
-        "saveDataDir": "",
-        "filterCommands": false,
-        "hasinput": false,
-        "inputs": 0,
-        "handleallupdates": false,
-        "handleprocessupdates": false,
-        "x": 120,
-        "y": 620,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "0a5032957c884cfb",
-        "type": "comment",
-        "z": "daea914a54c9431c",
-        "name": "Test",
-        "info": "",
-        "x": 570,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "8e05b25993e15b9d",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 1",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "ea8cdea0c35a7ff3",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "dbg humidity out",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 900,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "29f50ea68fe06411",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "12ea469c843e621c",
-        "type": "debug",
-        "z": "daea914a54c9431c",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 180,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "93e8c116ac688f2b",
-        "type": "function",
-        "z": "daea914a54c9431c",
-        "name": "function 2",
-        "func": "// Check what's coming in first - add a debug node to see raw payload\n// Then format it like this:\nmsg.payload = {\n    chatId: -5151436762,       // your Telegram chat ID\n    type: \"message\",\n    content: \"Humidity: \" + msg.payload + \"%\"\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 420,
-        "wires": [
-            [
-                "2abd20fe3b0a48fa"
-            ]
-        ]
-    },
-    {
-        "id": "30e8aa5a92e74fc5",
-        "type": "trigger",
-        "z": "daea914a54c9431c",
-        "name": "",
-        "op1": "1",
-        "op2": "",
-        "op1type": "str",
-        "op2type": "pay",
-        "duration": "250",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 560,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    }
+  {
+    "id": "daea914a54c9431c",
+    "type": "tab",
+    "label": "6: Flow1",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "43d1740e38cc6310",
+    "type": "tls-config",
+    "name": "mqtt.lora.eagelcovewc.com",
+    "cert": "",
+    "key": "",
+    "ca": "",
+    "certname": "mqtt_client.pem",
+    "keyname": "mqtt_client.key",
+    "caname": "ca.pem",
+    "servername": "mqtt.lora.eagelcovewc.com",
+    "verifyservercert": true,
+    "alpnprotocol": ""
+  },
+  {
+    "id": "9d156d3c3c4f5a59",
+    "type": "telegram bot",
+    "botname": "SJI IOT BOT",
+    "usernames": "",
+    "chatids": "",
+    "baseapiurl": "",
+    "testenvironment": false,
+    "updatemode": "polling",
+    "pollinterval": 300,
+    "usesocks": false,
+    "sockshost": "",
+    "socksprotocol": "socks5",
+    "socksport": 6667,
+    "socksusername": "anonymous",
+    "sockspassword": "",
+    "bothost": "",
+    "botpath": "",
+    "localbothost": "0.0.0.0",
+    "localbotport": 8443,
+    "publicbotport": 8443,
+    "privatekey": "",
+    "certificate": "",
+    "useselfsignedcertificate": false,
+    "sslterminated": false,
+    "verboselogging": false
+  },
+  {
+    "id": "b79a80b523e80429",
+    "type": "mqtt-broker",
+    "name": "mqtt.lora.ecwc.com",
+    "broker": "mqtt.lora.eaglecovewc.com",
+    "port": "8883",
+    "tls": "43d1740e38cc6310",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": true,
+    "protocolVersion": 4,
+    "keepalive": 60,
+    "cleansession": true,
+    "autoUnsubscribe": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthRetain": "false",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closeRetain": "false",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willRetain": "false",
+    "willPayload": "",
+    "willMsg": {},
+    "userProps": "",
+    "sessionExpiry": ""
+  },
+  {
+    "id": "3acc32140ce24c65",
+    "type": "mqtt in",
+    "z": "daea914a54c9431c",
+    "name": "ECWC Infrastructure Meter",
+    "topic": "application/4240e563-c576-499b-b6e9-89b95e3c4236/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 270,
+    "y": 440,
+    "wires": [
+      [
+        "93e8c116ac688f2b",
+        "28f0cc41a32b6d3f"
+      ]
+    ]
+  },
+  {
+    "id": "2abd20fe3b0a48fa",
+    "type": "telegram sender",
+    "z": "daea914a54c9431c",
+    "name": "Humidity Sender",
+    "bot": "9d156d3c3c4f5a59",
+    "haserroroutput": true,
+    "outputs": 2,
+    "x": 780,
+    "y": 420,
+    "wires": [
+      [
+        "8e05b25993e15b9d"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "2177bd87775a9d6a",
+    "type": "function",
+    "z": "daea914a54c9431c",
+    "name": "function 1",
+    "func": "// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = date.toString();\n// Return the message so it can be sent on\nreturn msg;\n",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 800,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6974f16e76fcf842",
+    "type": "inject",
+    "z": "daea914a54c9431c",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 600,
+    "y": 520,
+    "wires": [
+      [
+        "2177bd87775a9d6a"
+      ]
+    ]
+  },
+  {
+    "id": "28f0cc41a32b6d3f",
+    "type": "debug",
+    "z": "daea914a54c9431c",
+    "name": "debug 2",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 340,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "a88f445106480e65",
+    "type": "comment",
+    "z": "daea914a54c9431c",
+    "name": "Group 6 LoRaWAN Info",
+    "info": "## Group 6 - LoRaWAN Device Info\n\n**Application ID:** `8f77ae9d-fcd9-4d0a-ab94-c1b0f2d4c4cd`\n**MQTT Topic:** `application/8f77ae9d-fcd9-4d0a-ab94-c1b0f2d4c4cd/device/+/event/up`\n**Telegram Chat ID:** `-5151436762`\n**All-groups Chat ID:** `-5144508977`\n\n### Relay 6 (4 Channel Relay)\n- **DEV EUI:** `48E663FFFE300A72`\n- **APP EUI:** `48FF000000000A72`\n- **APP KEY:** `21653DA6077409B782859D8F2CB604F0`\n\n### TempHum6 (Temp & Humid Sensor)\n- **DEV EUI:** `48E663FFFE3010EF`\n- **APP EUI:** `48FF0000000010EF`\n- **APP KEY:** `A95B5FAF6CA0B8D8C982131ECF75BB61`\n\n---\n**Telegram for Windows:** [Download](https://telegram.org/dl/desktop/win)\n\n**AgroSense Sensor Manual:** [PDF](https://github.com/Makerfabs/Agrosense-Decoder/blob/main/Agrosense_Air_Temperature_Humidity_Sensor/AgroSense_Air%20Temperature%20and%20Humidity%20Sensor%20LoRaWAN%C2%AE%20Manual%20V1.2.pdf)\n\n**Telegram Group Link:** https://t.me/+38ZreTySeck5N2Nh\n\n**Telegram Web App:** [Open](https://web.telegram.org/k/)\n**Node-RED Telegram Docs:** [flows.nodered.org](https://flows.nodered.org/node/node-red-contrib-telegrambot)\n",
+    "x": 540,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "57ac8017da4a1d97",
+    "type": "telegram sender",
+    "z": "daea914a54c9431c",
+    "name": "G6Test1",
+    "bot": "9d156d3c3c4f5a59",
+    "haserroroutput": false,
+    "outputs": 1,
+    "x": 800,
+    "y": 280,
+    "wires": [
+      [
+        "ea8cdea0c35a7ff3"
+      ]
+    ]
+  },
+  {
+    "id": "333bb022d0d62bdc",
+    "type": "telegram receiver",
+    "z": "daea914a54c9431c",
+    "name": "Big funny",
+    "bot": "9d156d3c3c4f5a59",
+    "saveDataDir": "",
+    "filterCommands": false,
+    "hasinput": false,
+    "inputs": 0,
+    "handleallupdates": false,
+    "handleprocessupdates": false,
+    "x": 120,
+    "y": 620,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "0a5032957c884cfb",
+    "type": "comment",
+    "z": "daea914a54c9431c",
+    "name": "Test",
+    "info": "\n**Telegram Web App:** [Open](https://web.telegram.org/k/)\n**Node-RED Telegram Docs:** [flows.nodered.org](https://flows.nodered.org/node/node-red-contrib-telegrambot)\n",
+    "x": 570,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "8e05b25993e15b9d",
+    "type": "debug",
+    "z": "daea914a54c9431c",
+    "name": "debug 1",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 980,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "ea8cdea0c35a7ff3",
+    "type": "debug",
+    "z": "daea914a54c9431c",
+    "name": "dbg humidity out",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 900,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "29f50ea68fe06411",
+    "type": "debug",
+    "z": "daea914a54c9431c",
+    "name": "debug 3",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1140,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "12ea469c843e621c",
+    "type": "debug",
+    "z": "daea914a54c9431c",
+    "name": "debug 4",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 180,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "93e8c116ac688f2b",
+    "type": "function",
+    "z": "daea914a54c9431c",
+    "name": "function 2",
+    "func": "// Check what's coming in first - add a debug node to see raw payload\n// Then format it like this:\nmsg.payload = {\n    chatId: -5151436762,       // your Telegram chat ID\n    type: \"message\",\n    content: \"Humidity: \" + msg.payload + \"%\"\n};\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 560,
+    "y": 420,
+    "wires": [
+      [
+        "2abd20fe3b0a48fa"
+      ]
+    ]
+  },
+  {
+    "id": "30e8aa5a92e74fc5",
+    "type": "trigger",
+    "z": "daea914a54c9431c",
+    "name": "",
+    "op1": "1",
+    "op2": "",
+    "op1type": "str",
+    "op2type": "pay",
+    "duration": "250",
+    "extend": false,
+    "overrideDelay": false,
+    "units": "ms",
+    "reset": "",
+    "bytopic": "all",
+    "topic": "topic",
+    "outputs": 1,
+    "x": 560,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  }
 ]
