@@ -308,7 +308,7 @@
         "type": "function",
         "z": "daea914a54c9431c",
         "name": "function 2",
-        "func": "// Check what's coming in first - add a debug node to see raw payload\n// Then format it like this:\nmsg.payload = {\n    chatId: 5151436762,       // your Telegram chat ID\n    type: \"message\",\n    content: \"Humidity: \" + msg.payload + \"%\"\n};\nreturn msg;",
+        "func": "// Check what's coming in first - add a debug node to see raw payload\n// Then format it like this:\nmsg.payload = {\n    chatId: -5151436762,       // your Telegram chat ID\n    type: \"message\",\n    content: \"Humidity: \" + msg.payload + \"%\"\n};\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
